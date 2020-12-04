@@ -6,6 +6,7 @@ int fact(int n){
         return 1;
     int prevFact = fact(n-1);
     return n * prevFact;
+    //return n * fact(n-1);
 }
 
 int main(){
