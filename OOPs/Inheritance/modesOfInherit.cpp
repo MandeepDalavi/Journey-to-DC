@@ -24,7 +24,7 @@ int main(){
     C c;
     D d;
     b.Apub();
-    c.Apub();
-    d.Apub();
+    c.Apub();   // Not Accessible
+    d.Apub();   // Not Accessible
     return 0;
 }
