@@ -181,13 +181,24 @@ void star(int n){
     }
 }
 
+void zigzag(int n){
+    for(int i=1; i<=3; i++){
+        for(int j=1; j<=n; j++){                          // Pattern
+            if((i+j)%4==0 || (i==2 && j%4==0))            //     *       *
+                cout << "* ";                             //   *   *   *   *
+            else                                          // *       *       *
+                cout << "  ";
+        }cout<<endl;
+    }
+}
+
 int main(){
     int choice;
     char ans;
     do
     {
         cout << "\t\tPattern MENU" <<endl;
-        cout << "1. Rectangle" << endl << "2. Hollow Rectangle" << endl << "3. Inverted Half Pyramid" << endl << "4. Half Pyramid" << endl << "5. Half Pyramid with Number" << endl << "6. Floyd's Triangle" << endl << "7. Butterfly" << endl << "8. Inverted Pattern" << endl << "9. 0-1 Pattern" << endl << "10. Rhombus" << endl << "11. Number Pyramid" << endl << "12. Pallindromic Pyramid" << endl << "13. Star" << endl << "14. Exit" << endl;
+        cout << "1. Rectangle" << endl << "2. Hollow Rectangle" << endl << "3. Inverted Half Pyramid" << endl << "4. Half Pyramid" << endl << "5. Half Pyramid with Number" << endl << "6. Floyd's Triangle" << endl << "7. Butterfly" << endl << "8. Inverted Pattern" << endl << "9. 0-1 Pattern" << endl << "10. Rhombus" << endl << "11. Number Pyramid" << endl << "12. Pallindromic Pyramid" << endl << "13. Star" << endl << "14. Zig-Zag" << endl << "15. Exit" << endl;
         cout << "Please enter you choice: ";
         cin >> choice;
         switch(choice){
@@ -257,6 +268,11 @@ int main(){
                 star(n);
                 break;
             case 14:
+                cout << "\nEnter 'n': ";
+                cin >> n;
+                zigzag(n);
+                break;
+            case 15:
                 exit(0);
                 break;
             default:
