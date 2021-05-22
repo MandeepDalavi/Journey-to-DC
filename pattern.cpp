@@ -98,13 +98,21 @@ void butterfly(int n){                                    // Pattern
     }
 }
 
+void invertedPattern(int n){                              // Pattern
+    for(int i=1; i<=n; i++){                              // 1 2 3 4 5
+        for(int j=1; j<=n-i+1; j++){                      // 1 2 3 4
+            cout << j << " ";                             // 1 2 3
+        }cout<<endl;                                      // 1 2
+    }                                                     // 1
+}
+
 int main(){
     int choice;
     char ans;
     do
     {
         cout << "\t\tPattern MENU" <<endl;
-        cout << "1. Rectangle" << endl << "2. Hollow Rectangle" << endl << "3. Inverted Half Pyramid" << endl << "4. Half Pyramid" << endl << "5. Half Pyramid with Number" << endl << "6. Floyd's Triangle" << endl << "7. Butterfly" << endl << "8. Exit" << endl;
+        cout << "1. Rectangle" << endl << "2. Hollow Rectangle" << endl << "3. Inverted Half Pyramid" << endl << "4. Half Pyramid" << endl << "5. Half Pyramid with Number" << endl << "6. Floyd's Triangle" << endl << "7. Butterfly" << endl << "8. Inverted Pattern" << endl << "9. Exit" << endl;
         cout << "Please enter you choice: ";
         cin >> choice;
         switch(choice){
@@ -144,6 +152,11 @@ int main(){
                 butterfly(n);
                 break;
             case 8:
+                cout << "\nEnter 'n': ";
+                cin >> n;
+                invertedPattern(n);
+                break;
+            case 9:
                 exit(0);
                 break;
             default:
