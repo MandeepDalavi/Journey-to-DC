@@ -164,13 +164,30 @@ void pallindromePyramid(int n){
     */
 }
 
+void star(int n){
+    for(int i=1; i<=n; i++){                              // Pattern
+        for(int j=1; j<=n-i; j++)                         //       *
+            cout << "  ";                                 //     * * *
+        for(int k=1; k<=2*i-1; k++)                       //   * * * * *
+            cout << "* ";                                 // * * * * * * *
+        cout<<endl;                                       // * * * * * * *
+    }                                                     //   * * * * *
+    for(int i=n; i>0; i--){                               //     * * *
+        for(int j=1; j<=n-i; j++)                         //       *
+            cout << "  ";
+        for(int k=1; k<=2*i-1; k++)
+            cout << "* ";
+        cout<<endl;
+    }
+}
+
 int main(){
     int choice;
     char ans;
     do
     {
         cout << "\t\tPattern MENU" <<endl;
-        cout << "1. Rectangle" << endl << "2. Hollow Rectangle" << endl << "3. Inverted Half Pyramid" << endl << "4. Half Pyramid" << endl << "5. Half Pyramid with Number" << endl << "6. Floyd's Triangle" << endl << "7. Butterfly" << endl << "8. Inverted Pattern" << endl << "9. 0-1 Pattern" << endl << "10. Rhombus" << endl << "11. Number Pyramid" << endl << "12. Pallindromic Pyramid" << endl << "13. Exit" << endl;
+        cout << "1. Rectangle" << endl << "2. Hollow Rectangle" << endl << "3. Inverted Half Pyramid" << endl << "4. Half Pyramid" << endl << "5. Half Pyramid with Number" << endl << "6. Floyd's Triangle" << endl << "7. Butterfly" << endl << "8. Inverted Pattern" << endl << "9. 0-1 Pattern" << endl << "10. Rhombus" << endl << "11. Number Pyramid" << endl << "12. Pallindromic Pyramid" << endl << "13. Star" << endl << "14. Exit" << endl;
         cout << "Please enter you choice: ";
         cin >> choice;
         switch(choice){
@@ -235,6 +252,11 @@ int main(){
                 pallindromePyramid(n);
                 break;
             case 13:
+                cout << "\nEnter 'n': ";
+                cin >> n;
+                star(n);
+                break;
+            case 14:
                 exit(0);
                 break;
             default:
