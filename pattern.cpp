@@ -3,31 +3,31 @@ using namespace std;
 
 int row, col, n;
 
-void rectangle(int row, int col){
-    for(int i=1; i<=row; i++){
-        for(int j=1; j<=col; j++){
-            cout << "* ";
-        }cout<<endl;
-    }
+void rectangle(int row, int col){                         // Pattern
+    for(int i=1; i<=row; i++){                            //  * * * * *
+        for(int j=1; j<=col; j++){                        //  * * * * *
+            cout << "* ";                                 //  * * * * *
+        }cout<<endl;                                      //  * * * * *
+    }                                                     //  * * * * *
 }
 
-void hollowRectangle(int row, int col){
-    for(int i=1; i<=row; i++){
-        for(int j=1; j<=col; j++){
-            if(i==1 || i==row || j==1 || j==col)
-                cout << "* ";
-            else
+void hollowRectangle(int row, int col){                   // Pattern
+    for(int i=1; i<=row; i++){                            //  * * * * *
+        for(int j=1; j<=col; j++){                        //  *       *
+            if(i==1 || i==row || j==1 || j==col)          //  *       *
+                cout << "* ";                             //  *       *
+            else                                          //  * * * * *
                 cout << "  ";
         }cout<<endl;
     }
 }
 
-void invertedHalfPyramid(int n){
-    for(int i=n; i>0; i--){
-        for(int j=i; j>0; j--){
-            cout << "* ";
-        }cout<<endl;
-    }
+void invertedHalfPyramid(int n){                          // Pattern
+    for(int i=n; i>0; i--){                               // * * * * *
+        for(int j=i; j>0; j--){                           // * * * *
+            cout << "* ";                                 // * * *
+        }cout<<endl;                                      // * *
+    }                                                     // *
 }
 
 void halfPyramid(int n){
@@ -41,45 +41,45 @@ void halfPyramid(int n){
     // }
 
     // A Bit better approach
-    for(int i=1; i<=n; i++){
-        for(int j=1; j<=n; j++){
-            if(j<=n-i)
-                cout << "  ";
-            else
-                cout << "* ";
+    for(int i=1; i<=n; i++){                              // Pattern
+        for(int j=1; j<=n; j++){                          //         *
+            if(j<=n-i)                                    //       * *
+                cout << "  ";                             //     * * *
+            else                                          //   * * * *
+                cout << "* ";                             // * * * * *
         }cout<<endl;
     }
 }
 
-void halfPyramidNumbers(int n){
-    for(int i=1; i<=n; i++){
-        for(int j=1; j<=i; j++){
-            cout << i << " ";
+void halfPyramidNumbers(int n){                           // Pattern
+    for(int i=1; i<=n; i++){                              // 1
+        for(int j=1; j<=i; j++){                          // 2 2
+            cout << i << " ";                             // 3 3 3
+        }cout<<endl;                                      // 4 4 4 4
+    }                                                     // 5 5 5 5 5
+}
+
+void floydsTriangle(int n){                               // Pattern
+    int counter=1;                                        // 1
+    for(int i=1; i<=n; i++){                              // 2 3
+        for(int j=1; j<=i; j++){                          // 4 5 6
+            cout << counter << " ";                       // 7 8 9 10
+            counter++;                                    // 11 12 13 14 15
         }cout<<endl;
     }
 }
 
-void floydsTriangle(int n){
-    int counter=1;
-    for(int i=1; i<=n; i++){
-        for(int j=1; j<=i; j++){
-            cout << counter << " ";
-            counter++;
-        }cout<<endl;
-    }
-}
-
-void butterfly(int n){
-    for(int i=1; i<=n; i++){
-        for(int j=1; j<=i; j++){
-            cout << "* ";
-        }
-        int space = 2*n - 2*i;
-        for(int j=1; j<=space; j++){
-            cout << "  ";
-        }
-        for(int j=1; j<=i; j++){
-            cout << "* ";
+void butterfly(int n){                                    // Pattern
+    for(int i=1; i<=n; i++){                              // *                 *
+        for(int j=1; j<=i; j++){                          // * *             * *
+            cout << "* ";                                 // * * *         * * *
+        }                                                 // * * * *     * * * *
+        int space = 2*n - 2*i;                            // * * * * * * * * * *
+        for(int j=1; j<=space; j++){                      // * * * * * * * * * *
+            cout << "  ";                                 // * * * *     * * * *
+        }                                                 // * * *         * * *
+        for(int j=1; j<=i; j++){                          // * *             * *
+            cout << "* ";                                 // *                 *
         }
         cout << endl;
     }
