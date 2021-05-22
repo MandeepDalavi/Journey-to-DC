@@ -117,13 +117,23 @@ void _01Pattern(int n){
     }
 }
 
+void rhombusPattern(int n){                               // Pattern
+    for(int i=1; i<=n; i++){                              //     * * * * *
+        for(int j=1; j<=n-i; j++)                         //    * * * * *
+            cout << " ";                                  //   * * * * *
+        for(int k=1; k<=n; k++)                           //  * * * * *
+            cout << "* ";                                 // * * * * *
+        cout<<endl;
+    }
+}
+
 int main(){
     int choice;
     char ans;
     do
     {
         cout << "\t\tPattern MENU" <<endl;
-        cout << "1. Rectangle" << endl << "2. Hollow Rectangle" << endl << "3. Inverted Half Pyramid" << endl << "4. Half Pyramid" << endl << "5. Half Pyramid with Number" << endl << "6. Floyd's Triangle" << endl << "7. Butterfly" << endl << "8. Inverted Pattern" << endl << "9. 0-1 Pattern" << endl << "10. Exit" << endl;
+        cout << "1. Rectangle" << endl << "2. Hollow Rectangle" << endl << "3. Inverted Half Pyramid" << endl << "4. Half Pyramid" << endl << "5. Half Pyramid with Number" << endl << "6. Floyd's Triangle" << endl << "7. Butterfly" << endl << "8. Inverted Pattern" << endl << "9. 0-1 Pattern" << endl << "10. Rhombus" << endl << "11. Exit" << endl;
         cout << "Please enter you choice: ";
         cin >> choice;
         switch(choice){
@@ -173,6 +183,11 @@ int main(){
                 _01Pattern(n);
                 break;
             case 10:
+                cout << "\nEnter 'n': ";
+                cin >> n;
+                rhombusPattern(n);
+                break;
+            case 11:
                 exit(0);
                 break;
             default:
