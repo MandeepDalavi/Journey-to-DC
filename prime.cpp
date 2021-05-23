@@ -3,17 +3,18 @@
 using namespace std;
 
 int main(){
-    int n, flag = 0;
+    int n, flag = 1;
     cout<<"Enter No. to check Prime or not: ";
     cin>>n;
-    for(int i=2; i<sqrt(n);i++){
+    for(int i=2; i<=sqrt(n);i++){
         if(n%i==0){
-            flag = 1;
-            cout<<"Given no. is Not Prime"<<endl;
+            flag = 0;
             break;
         }
     }
-    if(flag==0)
-        cout<<"Given no.is Prime"<<endl;
+    if(flag==0 || n==1)
+        cout<<"Given no. is not Prime"<<endl;
+    else
+        cout<<"Given no. is prime"<<endl;
     return 0;
 }
